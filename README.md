@@ -1,6 +1,1 @@
-# dotfiles
-
-Folder structure is relative to `$HOME`.
-
-
-
+Use GNU stow.
