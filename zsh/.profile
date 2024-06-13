@@ -38,3 +38,7 @@ fi
 # Added by Toolbox App
 export PATH="$PATH:/local/home/bm277180/.local/share/JetBrains/Toolbox/scripts"
 export PATH="$PATH:/opt/wine-stable/bin/"
+
+
+export TERM=xterm
+
