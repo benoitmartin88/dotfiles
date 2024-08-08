@@ -39,6 +39,9 @@ fi
 export PATH="$PATH:/local/home/bm277180/.local/share/JetBrains/Toolbox/scripts"
 export PATH="$PATH:/opt/wine-stable/bin/"
 
-
 export TERM=xterm
+
+alias nvim="guix shell neovim python node rust rust-cargo nss-certs gcc-toolchain -- nvim"
+
+
 
