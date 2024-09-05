@@ -41,7 +41,8 @@ export PATH="$PATH:/opt/wine-stable/bin/"
 
 export TERM=xterm
 
+alias stow="guix shell stow -- stow"
 alias nvim="guix shell neovim python node rust rust-cargo nss-certs gcc-toolchain -- nvim"
-
+alias podman="guix shell podman -- podman"
 
 
