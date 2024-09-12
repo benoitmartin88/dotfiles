@@ -44,5 +44,6 @@ export TERM=xterm
 alias stow="guix shell stow -- stow"
 alias nvim="guix shell neovim python node rust rust-cargo nss-certs gcc-toolchain -- nvim"
 alias podman="guix shell podman -- podman"
+alias vlc="guix shell vlc -- vlc"
 
 
