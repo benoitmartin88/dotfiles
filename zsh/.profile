@@ -41,9 +41,11 @@ export PATH="$PATH:/opt/wine-stable/bin/"
 
 export TERM=xterm
 
-alias nvim="guix shell neovim python node rust rust-cargo nss-certs gcc-toolchain -- nvim"
+alias nvim="guix shell neovim python node rust rust-cargo nss-certs ripgrep gcc-toolchain clang -- nvim"
 alias podman="guix shell podman -- podman"
+alias powersave="sudo cpupower frequency-set --governor powersave"
+alias docker="podman"
 alias stow="guix shell stow -- stow"
 alias vlc="guix shell vlc -- vlc"
-
+alias fb="guix shell go -- go install github.com/danielmiessler/fabric@latest && GOPATH=$HOME/go PATH=$GOPATH/bin:$GOROOT/bin:$PATH fabric"
 
