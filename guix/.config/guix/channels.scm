@@ -8,7 +8,7 @@
       (url "https://gitlab.inria.fr/guix-hpc/guix-hpc-non-free.git"))
     (channel
       (name 'guix-science-nonfree)
-      (url "https://github.com/guix-science/guix-science-nonfree.git")
+      (url "https://codeberg.org/guix-science/guix-science-nonfree.git")
       (introduction
         (make-channel-introduction
           "58661b110325fd5d9b40e6f0177cc486a615817e"
