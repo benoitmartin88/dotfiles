@@ -27,10 +27,12 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 # Guix
-#export GUIX_PROFILE="$HOME/.config/guix/current"
-#. "$GUIX_PROFILE/etc/profile"
-if [ -n "$GUIX_ENVIRONMENT" ]
-then
+if [ -f "$HOME/.guix-profile" ]; then
+	export GUIX_PROFILE="$HOME/.guix-profile"
+	source "$GUIX_PROFILE/etc/profile"
+fi
+
+if [ -n "$GUIX_ENVIRONMENT" ]; then
     export PS1="[`guix package -p $GUIX_ENVIRONMENT -I | cut -f1 | head -n 5 | tr -d '\t ' | tr '\n' ' ' | sed -e 's/ *$//'`]> "
 fi
 
