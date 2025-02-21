@@ -36,6 +36,7 @@ if [ -n "$GUIX_ENVIRONMENT" ]; then
     export PS1="[`guix package -p $GUIX_ENVIRONMENT -I | cut -f1 | head -n 5 | tr -d '\t ' | tr '\n' ' ' | sed -e 's/ *$//'`]> "
 fi
 
+export EDITOR=vim
 
 # Added by Toolbox App
 export PATH="$PATH:/local/home/bm277180/.local/share/JetBrains/Toolbox/scripts"
