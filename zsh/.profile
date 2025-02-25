@@ -33,7 +33,20 @@ if [ -f "$HOME/.guix-profile" ]; then
 fi
 
 if [ -n "$GUIX_ENVIRONMENT" ]; then
-    export PS1="[`guix package -p $GUIX_ENVIRONMENT -I | cut -f1 | head -n 5 | tr -d '\t ' | tr '\n' ' ' | sed -e 's/ *$//'`]> "
+    # handle multiline prompt when there are lots of packages
+    NB_PKGS=$(guix package -p $GUIX_ENVIRONMENT -I | wc -l)
+    NB_PKG_PER_LINE=5
+    PKGS=($(guix package -p $GUIX_ENVIRONMENT -I | cut -f1 | tr -d '\t ' | tr '\n' ' '))
+
+    PROMPT="${PKGS[@]:0:$NB_PKG_PER_LINE}"
+    index=$NB_PKG_PER_LINE
+    while [[ $index -lt ${#PKGS[@]} ]]; do
+        PROMPT="$PROMPT\n${PKGS[@]:$index:$NB_PKG_PER_LINE}"
+        index=$((index + NB_PKG_PER_LINE))
+    done
+
+#    export PS1="[`guix package -p $GUIX_ENVIRONMENT -I | cut -f1 | head -n 5 | tr -d '\t ' | tr '\n' ' ' | sed -e 's/ *$//'`]> "
+    export PS1="[$(echo $PROMPT)]> "
 fi
 
 export EDITOR=vim
