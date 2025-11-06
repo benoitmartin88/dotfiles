@@ -37,8 +37,8 @@ if [ -d "$HOME/opt/spack/bin" ]; then
     . $HOME/opt/spack/share/spack/setup-env.sh
 fi
 
-#    export PS1="[`guix package -p $GUIX_ENVIRONMENT -I | cut -f1 | head -n 5 | tr -d '\t ' | tr '\n' ' ' | sed -e 's/ *$//'`]> "
-    export PS1="[$(echo $PROMPT)]> "
+if [ -n "$GUIX_ENVIRONMENT" ]; then
+    export PS1="[`guix package -p $GUIX_ENVIRONMENT -I | cut -f1 | head -n 5 | tr -d '\t ' | tr '\n' ' ' | sed -e 's/ *$//'`]> "
 fi
 
 export EDITOR=vim
