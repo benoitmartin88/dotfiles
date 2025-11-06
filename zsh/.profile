@@ -42,6 +42,8 @@ if [ -n "$GUIX_ENVIRONMENT" ]; then
 fi
 
 export EDITOR=vim
+export TERM=xterm
+export BORG_PASSCOMMAND='pass show backup/borg'
 
 # Added by Toolbox App
 export PATH="$PATH:/local/home/bm277180/.local/share/JetBrains/Toolbox/scripts"
